@@ -10,48 +10,84 @@
   flex: 1;
   flex-direction: column;
   margin: 10px;
-  padding: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.button-box {
+  display: flex;
+  background-color: #fdf5e6;
+  flex: 1;
+  flex-direction: row;
+  margin: 5px;
+  padding: 5px;
   font-size: 30px;
+
+  min-height: 5vh;
+  min-width: 10vw;
+  flex: 1;
+  height: 150px;
+  width: 100px;
+  max-width: 8vw;
+  max-height: 4vh;
+  gap: 2px;
 }
 
 
+
 #messages {
-  display: flex;
-  flex-direction: column;
-  min-height: 30vh;
-  min-width: 40vw;
   flex: 1;
-  height: 150px;
-  width: 200px;
-  max-width: 50vw;
-  max-height: 45vh;
 }
 
 .mensajes {
   display: flex;
-  flex-direction: column-reverse;
-  margin: 0px auto;
+  flex-direction: row;
   font-size: 15px;
   background-color: #FEEFC3;
   border-radius: 5px;
   overflow-y: auto;
+
+  min-height: 30vh;
+  min-width: 40vw;
+  height: 150px;
+  width: 200px;
+  max-width: 50vw;
+  max-height: 45vh;
+
 }
+
+.mensajes.expanded {
+
+  min-height: 70vh;
+  min-width: 80vw;
+  max-width: 80vw;
+  max-height: 70vh;
+
+
+}
+
 input {
     top: 20%;
     font-size: 20px;
-    background-color: #1e1e1e;
+    background-color: #CEEAD6;
     padding: 10px 15px;
     border-radius: 10px;
     border: solid 1px #ffc007;
+
+  min-height: 5vh;
+  min-width: 10vw;
+  flex: 1;
+  height: 150px;
+  width: 100px;
+  max-width: 15vw;
+  max-height: 5vh;
+
 }
 
 body {
-    background-color: #1e1e1e;
+    background-color: #FEEFC3;
 }
-.input-box input {
-  flex: 1;
-  padding: 10px;
-}
+
 
 .input-box button {
   padding: 10px 20px;
