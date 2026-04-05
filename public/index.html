@@ -1,0 +1,89 @@
+<html>
+
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+  const container = document.getElementById('message');
+  container.scrollIntoView({ behavior: 'smooth' });
+</head>
+
+<body>
+<h1>Clicks: <span id="count"></span></h1>
+<button onclick="sendClickP()">Add one</button>
+<button onclick="sendClickN()">Remove one</button>
+
+  <div class="flex-container">
+
+	 <div class ="input-box">
+	<div class ="mensajes">
+  <ul id="messages"></ul>
+	</div>
+  <input id="iInput" type="text" placeholder="Enter your full name" /> 
+  <button id="nigger" onclick="sendMessage()">Send</button>
+
+
+	</div>
+    
+  </div>
+
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+
+
+
+let socket = io();
+let count = 0;
+const username = prompt("Enter your name");
+
+ const input = document.getElementById("iInput");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("nigger").click();
+  }
+}); 
+
+function sendClickP() {
+    socket.emit("clickp");
+    count++;
+}
+
+
+function sendClickN() {
+    socket.emit("clickn");
+    count--;
+}
+
+function sendMessage() {
+
+ if (input.value.trim() === "") return;
+ socket.emit("chat message", {
+  user: username,
+  text: input.value
+});
+
+ input.value = "";
+}
+
+socket.on("chat message", (data) => {
+ const li = document.createElement("li");
+ li.textContent = data.user + ": " + data.text;
+ document.getElementById("messages").appendChild(li);
+
+});
+
+socket.on("update", (newCount) => {
+    document.getElementById("count").innerText = newCount;
+});
+
+const messages = document.getElementById("messages");
+messages.scrollTop = messages.scrollHeight;
+
+
+
+</script>
+</body>
+</html>

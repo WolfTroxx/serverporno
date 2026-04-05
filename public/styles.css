@@ -1,0 +1,66 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #bc8f8f;
+}
+
+.input-box {
+  display: flex;
+  background-color: #fdf5e6;
+  flex: 1;
+  flex-direction: column;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+
+#messages {
+  display: flex;
+  flex-direction: column;
+  min-height: 30vh;
+  min-width: 40vw;
+  flex: 1;
+  height: 150px;
+  width: 200px;
+  max-width: 50vw;
+  max-height: 45vh;
+}
+
+.mensajes {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0px auto;
+  font-size: 15px;
+  background-color: #FEEFC3;
+  border-radius: 5px;
+  overflow-y: auto;
+}
+input {
+    top: 20%;
+    font-size: 20px;
+    background-color: #1e1e1e;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: solid 1px #ffc007;
+}
+
+body {
+    background-color: #1e1e1e;
+}
+.input-box input {
+  flex: 1;
+  padding: 10px;
+}
+
+.input-box button {
+  padding: 10px 20px;
+}
+
+
+
+input::placeholder {
+    color: #ffc007;
+    opacity: 0.6;
+}
+
